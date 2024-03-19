@@ -4,8 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dear Laracasts</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<style>
+			@font-face {
+				font-family: 'Mona Sans';
+				src: url('./assets/fonts/Mona-Sans.woff2')
+						format('woff2 supports variations'),
+					url('./assets/fonts/Mona-Sans.woff2') format('woff2-variations');
+				font-weight: 200 900;
+				font-stretch: 75% 125%;
+			}
+		</style>
+
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: ['Mona Sans', 'sans-serif'],
+						},
+					},
+				},
+			}
+		</script>
 	</head>
+
 	<body>
-		It's a start
+		<main class="text-3xl p-4">It's a start</main>
 	</body>
 </html>
