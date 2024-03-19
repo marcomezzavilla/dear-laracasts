@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,9 +28,74 @@
 				},
 			}
 		</script>
+
+		<style>
+			nav {
+				scrollbar-width: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+			}
+		</style>
 	</head>
 
-	<body>
-		<main class="text-3xl p-4">It's a start</main>
+	<body class="bg-gray-50">
+		<nav
+			class="p-4 mb-16 flex flex-nowrap items-start gap-3 sticky top-0 overflow-x-auto"
+		>
+			<a
+				href="#intro"
+				class="grow shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 aspect-[16/1] hover:aspect-video p-4 transition-all"
+			>
+				Intro
+			</a>
+			<a
+				href="#show"
+				class="shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 aspect-[16/1] hover:aspect-video p-4 transition-all"
+			>
+				Show me something
+			</a>
+			<a
+				href="#why"
+				class="shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 aspect-[16/1] hover:aspect-video p-4 transition-all"
+			>
+				Why Laracasts?
+			</a>
+			<a
+				href="#about"
+				class="shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 aspect-[16/1] hover:aspect-video p-4 transition-all"
+			>
+				About
+			</a>
+		</nav>
+
+		<main class="p-4">
+			<section id="intro" class="scroll-mt-64 min-h-screen">
+				<h1
+					class="max-w-5xl text-2xl md:text-3xl font-semibold"
+					style="font-stretch: 120%"
+				>
+					Dear Laracasts,
+				</h1>
+				<p class="max-w-5xl text-2xl md:text-3xl mt-2">
+					Receiving an unwanted email can be bothersome, so the least I can
+					offer is a bit of effort to earn your attention.<br />
+					This is both a way to convince you that I can be of use (if not now,
+					perhaps in the future), and a way to show my appreciation. It's not
+					easy to condense everything into an email, so I preferred to let this
+					page speak through examples, ideas, and some additional information
+					about myself.<br />
+					A CV is limiting, whereas here I can be a bit more creative. Thank you
+					for your attention!
+				</p>
+			</section>
+
+			<section id="show" class="min-h-screen">Show</section>
+
+			<section id="why" class="min-h-screen">Why</section>
+
+			<section id="about" class="min-h-screen">About</section>
+		</main>
 	</body>
 </html>
