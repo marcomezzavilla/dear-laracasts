@@ -6,7 +6,7 @@
 		<title>Dear Laracasts</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 
-		<style>
+		<!-- <style>
 			@font-face {
 				font-family: 'Mona Sans';
 				src: url('./assets/fonts/Mona-Sans.woff2')
@@ -27,13 +27,13 @@
 					},
 				},
 			}
-		</script>
+		</script> -->
 
 		<style>
-			nav {
+			[data-invisiblescroll] {
 				scrollbar-width: none;
 
-				&::-webkit-scrollbar {
+				&:-webkit-scrollbar {
 					display: none;
 				}
 			}
@@ -42,60 +42,285 @@
 
 	<body class="bg-gray-50">
 		<nav
-			class="text-sm p-4 mb-16 flex flex-nowrap items-start gap-2 fixed top-0 overflow-x-auto w-full"
+			data-invisiblescroll
+			class="fixed top-0 z-10 flex items-start w-full gap-2 p-4 mb-16 overflow-x-auto text-sm flex-nowrap bg-gradient-to-b from-gray-50 to-transparent"
 		>
 			<a
 				href="#intro"
-				class="scroll-ml-3 grow shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 h-12 hover:h-32 py-3.5 px-4 transition-all"
+				class="scroll-ml-3 grow shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
 			>
-				Intro
+				1. Intro
 			</a>
 			<a
 				href="#show"
-				class="scroll-ml-3 shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 h-12 hover:h-32 py-3.5 px-4 transition-all"
+				class="scroll-ml-3 shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
 			>
-				Show me something
+				2. Show me something
 			</a>
 			<a
 				href="#why"
-				class="scroll-ml-3 shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 h-12 hover:h-32 py-3.5 px-4 transition-all"
+				class="scroll-ml-3 shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
 			>
-				Why Laracasts?
+				3. Why Laracasts?
 			</a>
 			<a
 				href="#about"
-				class="scroll-ml-3 shrink-0 bg-violet-200 hover:bg-pink-200 rounded-2xl w-64 h-12 hover:h-32 py-3.5 px-4 transition-all"
+				class="scroll-ml-3 shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
 			>
-				About
+				4. About
+			</a>
+			<a
+				href="#about"
+				class="scroll-ml-3 shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
+			>
+				5. Random
 			</a>
 		</nav>
 
 		<main class="p-4">
-			<section id="intro" class="scroll-mt-48 min-h-screen mt-48">
+			<section id="intro" class="min-h-screen mt-48 mb-20 scroll-mt-48">
 				<h1
-					class="max-w-5xl text-2xl md:text-3xl font-semibold"
+					class="max-w-5xl mb-2 text-3xl font-semibold md:text-4xl"
 					style="font-stretch: 120%"
 				>
 					Dear Laracasts,
 				</h1>
-				<p class="max-w-5xl text-2xl md:text-3xl mt-2">
+				<p class="max-w-5xl text-3xl font-light md:text-4xl">
 					Receiving an unwanted email can be bothersome, so the least I can
 					offer is a bit of effort to earn your attention.<br />
 					This is both a way to convince you that I can be of use (if not now,
 					perhaps in the future), and a way to show my appreciation. It's not
 					easy to condense everything into an email, so I preferred to let this
 					page speak through examples, ideas, and some additional information
-					about myself.<br />
-					A CV is limiting, whereas here I can be a bit more creative. Thank you
-					for your attention!
+					about myself. A CV is limiting, whereas here I can be a bit more
+					creative.
+				</p>
+
+				<svg
+					viewBox="0 0 186 141"
+					fill="none"
+					class="block w-28 h-auto mt-20 rotate-[135deg]"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M97.434 112.265C100.403 109.095 104.434 105.715 107.191 101.7C112.918 93.2488 118.221 84.586 123.523 75.9232C133.492 59.4427 143.461 42.7509 154.279 24.7914C140.28 29.4397 129.886 41.2719 113.342 38.5251C114.827 35.9897 115.251 33.8768 116.312 33.4542C132.856 26.693 147.279 16.5511 160.854 5.35286C172.096 -3.73254 177.823 -1.19707 179.308 12.5367C180.792 26.9043 183.762 41.2719 185.883 55.6395C186.307 57.9637 185.459 60.4991 185.247 63.4572C176.126 59.2314 176.126 59.2314 168.49 27.7494C166.793 30.4962 165.308 32.6091 164.036 34.7219C151.521 56.4846 139.219 78.2473 126.281 99.7988C122.038 106.771 116.948 113.321 111.221 119.026C101.04 129.168 89.7981 128.745 80.2532 117.97C75.3748 112.476 71.7689 105.715 68.5873 98.9536C64.9815 91.3472 62.6483 83.107 59.4667 75.2893C57.1335 69.7958 54.164 64.5136 51.4066 58.8088C44.8312 61.3443 42.2859 66.2039 39.3164 70.641C26.8021 89.4456 17.4694 109.518 10.4698 131.069C9.62137 133.605 9.19715 136.352 7.71239 138.676C6.86396 139.944 4.53077 141 2.83391 141C1.98548 141 0.288608 138.676 0.0765002 137.408C-0.135607 133.816 0.0765196 129.802 0.924951 126.421C6.86397 102.123 16.833 79.5151 31.0442 59.0201C33.8016 54.7943 37.4075 50.9911 41.2254 47.8218C48.225 42.117 55.2245 42.3283 60.9514 49.3008C65.6178 55.0056 69.0115 61.7668 71.981 68.5281C76.4353 78.4586 79.6169 88.8118 84.0712 98.7423C86.6165 104.025 89.586 109.518 97.434 112.265Z"
+						fill="currentColor"
+					></path>
+				</svg>
+			</section>
+
+			<section id="show" class="min-h-screen mb-20 scroll-mt-48">
+				<h1
+					class="max-w-5xl mb-2 text-2xl font-medium md:text-3xl"
+					style="font-stretch: 120%"
+				>
+					Show me something
+				</h1>
+				<p class="max-w-4xl">
+					Instead of showcasing potentially irrelevant web works with Laracasts
+					(of which I'll add some links below), I'd like to take a step back and
+					provide more fitting examples.
+				</p>
+
+				<div
+					data-invisiblescroll
+					class="flex items-start gap-3 my-16 overflow-auto flex-nowrap"
+				>
+					<div class="max-w-sm min-w-40">
+						<figure>
+							<img
+								class="border rounded"
+								src="./assets/images/pinkary.webp"
+								alt=""
+							/>
+							<figcaption class="mt-2 text-sm">
+								<a
+									href="https://www.pinkary.com"
+									class="flex items-center gap-2"
+									target="_blank"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										class="flex-shrink-0 w-3 h-3"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+									<span class="truncate">pinkary.com</span>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div class="max-w-sm min-w-40">
+						<figure>
+							<img
+								class="border rounded"
+								src="./assets/images/studioatomic.webp"
+								alt=""
+							/>
+							<figcaption class="mt-2 text-sm">
+								<a
+									href="https://www.70materia.com/en"
+									class="flex items-center gap-2"
+									target="_blank"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										class="flex-shrink-0 w-3 h-3"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+									<span class="truncate">70materia.com</span>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div class="max-w-sm min-w-40">
+						<figure>
+							<img
+								class="border rounded"
+								src="./assets/images/agapemilano.webp"
+								alt=""
+							/>
+							<figcaption class="mt-2 text-sm">
+								<a
+									href="https://www.agape-milano.it"
+									class="flex items-center gap-2"
+									target="_blank"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										class="flex-shrink-0 w-3 h-3"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+									<span class="truncate">agape-milano.it</span>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div class="max-w-sm min-w-40">
+						<figure>
+							<img
+								class="border rounded"
+								src="./assets/images/accurat.webp"
+								alt=""
+							/>
+							<figcaption class="mt-2 text-sm">
+								<a
+									href="https://www.accurat.it"
+									class="flex items-center gap-2"
+									target="_blank"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										class="flex-shrink-0 w-3 h-3"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+									<span class="truncate">accurat.it</span>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div class="max-w-sm min-w-40">
+						<figure>
+							<img
+								class="border rounded"
+								src="./assets/images/70materia.webp"
+								alt=""
+							/>
+							<figcaption class="mt-2 text-sm">
+								<a
+									href="https://www.70materia.com/en"
+									class="flex items-center gap-2"
+									target="_blank"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="2"
+										stroke="currentColor"
+										class="flex-shrink-0 w-3 h-3"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+										/>
+									</svg>
+									<span class="truncate">70materia.com</span>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+
+				<p class="max-w-4xl">
+					Let's take the (fantastic) series "Build a Forum With Laravel" by Luke
+					Downing, or "Build a Web Shop From A-Z" by Philo Hermans. Their aim is
+					certainly not to focus on the layout of these web apps.<br />
+					Sometimes starting with a "prebuilt" layout could even be detrimental
+					because it adds noise. There are other cases where seeing what you
+					want to build can help viewers understand the goal.<br />
+					However, in both cases, it's likely that at some point in the series,
+					there will be some tweaking needed to the app's style as well.
+					Tailwind UI is helpful but doesn't have all the answers
+					(fortunately!), so different solutions may be found case by case.<br />
+					These challenges are what excite me.
 				</p>
 			</section>
 
-			<section id="show" class="min-h-screen scroll-mt-48">Show</section>
-
 			<section id="why" class="min-h-screen scroll-mt-48">Why</section>
 
-			<section id="about" class="min-h-screen scroll-mt-48">About</section>
+			<section id="about" class="min-h-screen scroll-mt-48">
+				<h3 class="max-w-5xl text-2xl md:text-3xl">
+					Presentations can get extremely boring, so I will try to be succinct
+					about the more "institutional" part and focus on my
+					experiences/epiphanies in the digital field.
+				</h3>
+
+				<div class="grid gap-2 mt-12 md:grid-cols-2">
+					<article>...</article>
+					<article>...</article>
+				</div>
+			</section>
 		</main>
 	</body>
 
@@ -121,8 +346,9 @@
 				})
 			},
 			{
+				rootMargin: '0px',
+				threshold: 0.1,
 				root: null,
-				threshold: 0.5,
 			}
 		)
 
