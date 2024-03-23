@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dear Laracasts</title>
+		<meta name="robots" content="noindex" />
 		<script src="https://cdn.tailwindcss.com"></script>
-
 		<style>
 			@font-face {
 				font-family: 'Mona Sans';
@@ -15,6 +15,13 @@
 				font-weight: 200 900;
 				font-stretch: 75% 125%;
 			}
+
+			@font-face {
+				font-family: 'PPEditorialNew';
+				src: url('./assets/fonts/PPEditorialNew-Ultralight.otf')
+					format('opentype');
+				font-weight: 200;
+			}
 		</style>
 
 		<script>
@@ -23,6 +30,7 @@
 					extend: {
 						fontFamily: {
 							sans: ['Mona Sans', 'sans-serif'],
+							serif: ['PPEditorialNew', 'serif'],
 						},
 					},
 				},
@@ -40,10 +48,10 @@
 		</style>
 	</head>
 
-	<body class="antialiased bg-gray-50 text-gray-950">
+	<body class="overflow-x-hidden _antialiased bg-gray-50 text-gray-950">
 		<nav
 			data-invisiblescroll
-			class="fixed top-0 z-10 flex items-start w-full gap-2 p-4 mb-16 overflow-x-auto text-sm flex-nowrap bg-gradient-to-b from-gray-50 to-transparent"
+			class="fixed top-0 z-20 flex items-start w-full gap-2 p-4 mb-16 overflow-x-auto text-sm flex-nowrap bg-gradient-to-b from-gray-50 to-transparent"
 		>
 			<a
 				href="#intro"
@@ -69,23 +77,20 @@
 			>
 				4. About
 			</a>
-			<a
-				href="#about"
-				class="scroll-ml-3 shrink-0 bg-violet-300 hover:bg-purple-300 rounded-2xl w-60 h-12 hover:h-32 py-3.5 px-4 transition-all"
-			>
-				5. Random
-			</a>
 		</nav>
 
-		<main class="p-4">
-			<section id="intro" class="min-h-screen mt-48 mb-20 scroll-mt-48">
+		<main class="flex flex-col items-center pt-4 felx">
+			<section
+				id="intro"
+				class="w-full mt-48 max-w-7xl scroll-mt-48 mb-[50vh] px-4"
+			>
 				<h1
-					class="max-w-5xl mb-2 text-3xl font-semibold md:text-4xl"
-					style="font-stretch: 120%"
+					class="max-w-5xl mt-4 mb-4 font-serif text-6xl _font-semibold md:text-7xl"
+					style="_font-stretch: 120%"
 				>
 					Dear Laracasts,
 				</h1>
-				<p class="max-w-5xl text-3xl font-light md:text-4xl">
+				<p class="max-w-5xl text-xl md:text-2xl">
 					Receiving an unwanted email can be bothersome, so the least I can
 					offer is a bit of effort to earn your attention.<br />
 					This is both a way to convince you that I can be of use (if not now,
@@ -99,7 +104,7 @@
 				<svg
 					viewBox="0 0 186 141"
 					fill="none"
-					class="block w-28 h-auto mt-20 rotate-[135deg]"
+					class="block w-28 h-auto mt-16 rotate-[135deg]"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
@@ -109,7 +114,7 @@
 				</svg>
 			</section>
 
-			<section id="show" class="min-h-screen scroll-mt-48 mb-60">
+			<section id="show" class="w-full max-w-7xl scroll-mt-48 mb-[50vh] px-4">
 				<h1
 					class="max-w-5xl mb-2 text-2xl font-medium md:text-3xl"
 					style="font-stretch: 120%"
@@ -124,7 +129,7 @@
 
 				<div
 					data-invisiblescroll
-					class="flex items-start gap-3 my-16 overflow-auto flex-nowrap"
+					class="flex items-start max-w-6xl gap-3 my-16 overflow-auto flex-nowrap"
 				>
 					<div class="max-w-sm min-w-40">
 						<figure>
@@ -319,7 +324,7 @@
 							class="w-full max-w-3xl overflow-auto text-[0.675rem] border rounded bg-gray-50 aspect-[3/4] md:aspect-video"
 						>
 							<nav
-								class="sticky top-0 flex items-center justify-between p-2 px-3 font-semibold text-gray-800 border-b bg-gray-50"
+								class="sticky top-0 z-10 flex items-center justify-between p-2 px-3 font-semibold text-gray-800 border-b bg-gray-50"
 							>
 								<h1>Forum</h1>
 								<img
@@ -523,7 +528,7 @@
 
 					<div class="absolute origin-center -z-10">
 						<div
-							class="w-64 h-64 -mt-8 rounded-full animate-[spin_4s] blur-2xl bg-gradient-to-br from-indigo-300 to-lime-300 via-pink-300"
+							class="w-64 h-64 -mt-8 rounded-full animate-[spin_4s_infinite] blur-2xl bg-gradient-to-br from-indigo-300 to-lime-300 via-pink-300"
 						></div>
 					</div>
 
@@ -534,7 +539,7 @@
 							class="bg-slate-950 w-full max-w-3xl overflow-auto text-[0.675rem] border rounded aspect-[3/4] md:aspect-video md:order-2"
 						>
 							<nav
-								class="sticky top-0 flex items-center justify-between p-2 px-3 font-semibold border-b border-slate-600 text-slate-200 bg-slate-950"
+								class="sticky top-0 z-10 flex items-center justify-between p-2 px-3 font-semibold border-b border-slate-600 text-slate-200 bg-slate-950"
 							>
 								<h1>Forum</h1>
 								<img
@@ -543,8 +548,10 @@
 								/>
 							</nav>
 
-							<div class="flex gap-6 p-4">
-								<div class="flex-2 flex flex-col gap-1.5 text-slate-100">
+							<div class="flex flex-col gap-6 p-4 sm:flex-row">
+								<div
+									class="order-2 sm:order-1 flex-2 flex flex-col gap-1.5 text-slate-100"
+								>
 									<h2 class="font-semibold">Your contributions</h2>
 									<div
 										class="px-2 py-1.5 rounded-md bg-slate-900 sm:grid sm:grid-cols-[1fr_60px] gap-10 hover:bg-slate-800 border-t border-slate-800 transition-colors"
@@ -859,7 +866,7 @@
 								</div>
 
 								<div
-									class="sticky flex-1 flex-shrink-0 w-full h-24 min-w-20 top-12 text-slate-200"
+									class="flex-1 flex-shrink-0 order-1 w-full h-24 sm:sticky sm:order-2 min-w-20 sm:top-12 text-slate-200"
 								>
 									<h3 class="mb-2 font-semibold">New topic</h3>
 
@@ -904,31 +911,434 @@
 					easier; other times, it requires multiple attempts. For some, this
 					work can be tedious. I enjoy experimenting with CSS (whether vanilla
 					or through Tailwind) and I know Laravel well enough to avoid disaster
-					(thanks, Laracasts!).
+					(thanks, Laracasts!).<br />
 				</p>
 			</section>
 
-			<section id="why" class="min-h-screen scroll-mt-48 mb-60">
+			<section
+				id="why"
+				class="w-full max-w-7xl scroll-mt-48 pb-[50vh] px-4 relative"
+			>
 				<h1
 					class="max-w-5xl mb-2 text-2xl font-medium md:text-3xl"
 					style="font-stretch: 120%"
 				>
 					Why Laracasts?
 				</h1>
-			</section>
 
-			<section id="about" class="min-h-screen scroll-mt-48">
-				<h3 class="max-w-5xl text-2xl md:text-3xl">
-					Presentations can get extremely boring, so I will try to be succinct
-					about the more "institutional" part and focus on my
-					experiences/epiphanies in the digital field.
-				</h3>
+				<p class="max-w-4xl">
+					The reason is quite simple: I have tremendous respect for the project
+					and how it has been carried forward over the years by Jeffrey (and all
+					the collaborators). I hold teaching in high regard in general, but on
+					the web and at this level, I don't think there is anything better.
+					Being able to collaborate with you would be a source of personal
+					satisfaction.
+				</p>
 
-				<div class="grid gap-2 mt-12 md:grid-cols-2">
-					<article>...</article>
-					<article>...</article>
+				<svg
+					width="500"
+					height="auto"
+					viewBox="0 0 274 246"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-36 mt-16 mb-16 rotate-[80deg] w-auto"
+				>
+					<g clip-path="url(#clip0_3_252)">
+						<path
+							d="M247.029 126.774C239.87 122.246 234.026 118.963 228.47 115.304C225.269 113.092 221.692 110.591 225.349 104.578C237.422 110.486 249.602 115.166 260.426 122.858C265.039 126.033 265.292 129.442 262.591 134.52C261.626 136.402 260.284 137.995 259.133 139.495C252.518 147.651 245.904 155.807 239.006 163.866C236.801 166.584 234.122 169.297 230.452 166.607C227.158 164.204 227.477 160.518 229.212 157.321C231.236 153.748 233.729 150.654 236.128 147.37C237.855 145.119 239.772 142.776 240.56 139.568C239.418 140.123 238.276 140.677 237.133 141.232C224.378 147.426 218.321 146.6 207.608 137.206C199.151 129.541 192.506 120.761 188.438 110.024C187.42 107.458 186.401 104.892 185.476 102.516C180.93 92.2461 175.258 90.7624 166.85 98.1411C162.551 101.877 159 106.662 155.171 110.875C143.867 123.898 133.906 125.204 119.597 115.201C108.865 107.7 100.046 98.3274 93.5205 86.8997C91.5637 83.3769 89.5139 79.6637 87.079 76.6084C82.9572 71.5471 79.3578 71.4115 75.5191 76.5715C71.2997 81.9164 68.1163 87.9354 64.6495 93.8565C62.1479 97.8963 60.306 102.322 57.5211 106.264C51.7609 114.241 43.8535 118.787 33.7326 116.874C26.1663 115.369 18.5115 113.2 11.1444 110.657C6.3275 108.993 2.47584 105.449 2.44949 98.1634C4.90665 98.8537 6.89008 99.5385 9.06389 100.131C16.8117 102.49 24.5595 104.849 32.5021 106.642C40.1614 108.337 45.6913 104.71 49.3529 98.2239C52.4389 92.4877 54.9582 86.5558 58.1372 81.0098C61.1214 76.0294 64.0126 70.8586 67.9353 66.8349C76.2635 57.8469 87.5355 58.2589 95.3096 67.9031C98.8691 72.2958 101.853 77.4388 104.554 82.4839C110.145 92.4817 118.03 100.424 127.256 106.774C134.977 111.97 138.679 111.35 144.806 104.608C149.88 99.0835 154.485 93.0806 160.214 88.4152C163.845 85.2397 168.98 83.2167 173.917 82.2321C182.462 80.4371 189.249 84.2041 193.251 91.9132C195.296 96.0994 197.244 100.568 198.528 105.124C201.746 115.568 208.684 123.5 216.387 130.589C220.146 133.943 224.113 135.313 229.253 132.817C234.393 130.32 239.901 129.059 247.029 126.774Z"
+							fill="currentColor"
+						></path>
+					</g>
+				</svg>
+
+				<p class="max-w-4xl mt-6">
+					<strong class="font-semibold"
+						>But why should Laracasts choose me?</strong
+					><br />
+					The reason is that I am obsessed with interfaces. I like to experiment
+					and try new approaches, and even though my background is in design, I
+					have a decent knowledge of web development. The idea is to be able to
+					collaborate both with other more "traditional" designers (i.e., those
+					who prefer Figma to the browser) and with developers through
+					functional prototypes and redesigns.
+				</p>
+
+				<div
+					class="absolute bottom-0 w-full py-4 transition-transform duration-500 translate-y-3/4 hover:translate-y-0"
+				>
+					<div
+						class="absolute top-0 flex -translate-y-24 pointer-events-none bottom-12"
+					>
+						<svg
+							width="500"
+							height="auto"
+							viewBox="0 0 245 176"
+							fill="none"
+							class="w-full h-24 ml-0"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M0.689053 159.489C7.44031 160.759 14.1916 162.03 22.2087 163.512C21.1538 160.759 20.5209 158.853 19.466 156.947C-1.20972 116.501 5.33053 73.3014 36.977 40.4783C57.4418 19.5139 82.759 8.71403 111.03 2.78469C142.676 -3.77994 172.846 1.72588 201.961 14.4316C216.94 20.9962 228.544 31.7961 238.46 44.5018C240.991 47.89 243.312 51.2782 245 55.937C242.89 54.6664 240.359 53.6076 239.093 51.7017C206.391 6.17288 128.963 -4.62699 73.0541 25.2315C51.1125 36.8784 34.6563 54.0311 24.7404 76.9014C13.1367 103.795 17.9891 139.159 36.5551 161.183C40.3527 151.653 36.977 139.371 47.7369 131.748C47.3149 145.301 47.1039 157.583 46.682 169.653C46.471 173.677 44.3612 176.853 40.5637 175.794C27.4831 172.406 14.6135 168.594 1.95493 164.571C1.11102 164.359 0.689046 162.453 0.0561163 161.394C-0.15486 160.971 0.267099 160.124 0.689053 159.489Z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<p class="mt-12 -ml-12 text-sm font-semibold text-center">
+							And it looks fun, too!
+						</p>
+					</div>
+
+					<video
+						class="block max-w-[calc(100%-2rem)] rounded-lg w-full sm:w-96"
+						controls
+						muted
+						playsinline
+					>
+						<source src="./assets/videos/funnyintro.mp4" type="video/mp4" />
+					</video>
 				</div>
 			</section>
+
+			<div
+				class="flex flex-col items-center w-full bg-gray-950 _mb-[50vh] z-10"
+			>
+				<section
+					id="about"
+					class="w-full px-4 py-32 max-w-7xl scroll-mt-48 text-slate-100"
+				>
+					<h1
+						class="max-w-5xl mb-2 text-2xl font-medium md:text-3xl"
+						style="font-stretch: 120%"
+					>
+						About
+					</h1>
+					<p class="max-w-5xl">
+						Presentations can get extremely boring, so I will try to be succinct
+						about the more "institutional" part and focus on my
+						experiences/epiphanies in the digital field.
+					</p>
+
+					<div class="grid gap-20 mt-12 md:grid-cols-3">
+						<article>
+							<div class="flex flex-col gap-2 md:sticky top-32">
+								<h3 class="text-xl md:text-2xl">Work experience</h3>
+
+								<div
+									class="px-4 py-3 text-sm transition-colors bg-slate-200 rounded-2xl text-gray-950 hover:bg-slate-100"
+								>
+									<strong class="font-semibold">Moku</strong>
+									<p>2012 — 2023</p>
+									<p>Product and UI/UX designer for a digital agency.</p>
+								</div>
+
+								<div
+									class="px-4 py-3 text-sm transition-colors bg-slate-200 rounded-2xl text-gray-950 hover:bg-slate-100"
+								>
+									<strong class="font-semibold">Iperstudio</strong>
+									<p>2014 — Present</p>
+									<p>
+										I co-founded the tiny
+										<a
+											href="https://iperstudio.net"
+											target="_blank"
+											class="inline-flex items-center gap-1 ml-1"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke-width="2"
+												stroke="currentColor"
+												class="flex-shrink-0 w-3 h-3"
+											>
+												<path
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+												/>
+											</svg>
+											<span>Iperstudio collective</span></a
+										>.
+									</p>
+								</div>
+
+								<div
+									class="px-4 py-3 text-sm transition-colors bg-slate-200 rounded-2xl text-gray-950 hover:bg-slate-100"
+								>
+									<strong class="font-semibold">Multiplo</strong>
+									<p>2017 — 2022</p>
+									<p>Front-end developer in a creative direction studio.</p>
+								</div>
+
+								<h3 class="mt-8 text-xl md:text-2xl">Education</h3>
+								<div
+									class="px-4 py-3 text-sm transition-colors bg-slate-200 rounded-2xl text-gray-950 hover:bg-slate-100"
+								>
+									<strong class="font-semibold">Bachelor's Degree</strong>
+									<p>
+										Industrial Design, IUAV University (Venezia, 2008 — 2011)
+									</p>
+								</div>
+
+								<div
+									class="px-4 py-3 text-sm transition-colors bg-slate-200 rounded-2xl text-gray-950 hover:bg-slate-100"
+								>
+									<strong class="font-semibold">Master's Degree</strong>
+									<p>Design, IUAV University (Venezia, 2012 — 2015)</p>
+								</div>
+							</div>
+						</article>
+
+						<article class="md:col-span-2">
+							<h3 class="text-xl md:text-2xl">...And in the meantime</h3>
+
+							<svg
+								width="500"
+								height="auto"
+								viewBox="0 0 246 287"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="w-auto my-6 ml-20 h-28 color-slate-50"
+							>
+								<path
+									d="M156.25 265.656C157.94 265.444 158.573 265.656 159.207 265.444C197.847 242.174 224.029 209.172 233.953 164.747C236.487 153.535 236.065 141.899 233.109 130.476C226.985 105.936 206.504 89.0121 181.377 87.5312C168.286 86.685 155.617 88.1659 144.215 95.3586C143.37 101.493 142.737 107.628 141.47 113.34C139.359 122.648 134.502 130.264 125.845 134.918C119.51 138.515 113.176 138.515 109.798 135.13C105.363 130.687 105.364 124.764 108.108 119.898C111.909 113.129 116.554 106.782 121.411 100.859C124.578 97.051 128.801 93.8777 132.602 90.7045C129.012 66.7994 106.419 56.645 79.3921 66.5878C78.5475 69.9726 77.7029 73.569 76.6472 76.9538C72.4242 89.4352 64.6117 98.9549 51.9427 103.397C47.0863 105.09 41.8075 105.724 37.5845 101.282C34.4173 97.8972 34.4173 91.9738 37.7957 86.0504C43.2856 76.7422 51.5204 70.1842 60.3887 64.4723C63.5559 62.5684 66.7232 60.6644 69.8904 58.972C65.6674 21.9508 32.517 -4.28131 0 10.5272C0.211149 7.77702 -1.29001e-05 5.44997 0.844584 4.18067C1.90033 2.69982 4.22297 1.85363 6.12332 1.43053C24.071 -1.95427 40.7518 0.161227 54.4765 13.2773C64.8228 23.0086 71.7908 34.8554 76.4361 48.3946C77.0695 50.2985 77.703 52.2024 78.5476 54.1064C78.5476 54.3179 78.9698 54.5295 79.8144 55.1641C81.7147 54.9526 84.0374 54.9526 86.36 54.5295C114.654 50.087 129.434 57.7027 142.526 84.1464C145.06 83.3002 148.016 82.454 150.761 81.3963C167.019 75.896 183.278 75.4729 199.747 80.9732C226.563 89.8583 243.877 112.917 245.778 142.111C246.833 157.977 244.089 173.209 238.388 188.017C224.452 223.769 201.648 251.905 167.441 270.31C165.752 271.368 163.852 272.214 162.163 273.272C161.951 273.483 161.74 273.906 161.107 275.176C168.286 276.868 175.043 276.233 181.8 275.81C188.345 275.599 195.102 274.964 202.281 274.541C201.648 280.041 198.691 282.157 195.102 283.426C190.879 284.695 186.656 286.388 182.433 286.599C171.031 287.023 159.418 287.234 147.804 286.599C138.725 285.965 136.191 281.099 140.203 273.695C148.86 258.04 157.728 242.386 166.597 226.731C168.075 224.192 169.975 222.077 172.298 219.115C176.31 223.769 174.62 227.154 173.142 230.327C167.23 241.751 161.951 253.175 156.25 265.656ZM43.919 94.9355C58.4883 93.0315 67.5677 83.7233 68.2012 70.6073C58.4883 76.9538 49.1978 82.6656 43.919 94.9355ZM115.288 127.726C127.745 124.764 133.658 116.302 132.391 103.397C124.367 110.167 117.399 116.514 115.288 127.726Z"
+									fill="currentColor"
+								></path>
+							</svg>
+
+							<div
+								class="relative flex flex-col gap-2 mt-6 text-sm border-l-2 border-gray-950"
+							>
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">Circa 2003</strong>
+									<p>
+										I "played" Pierrick Calvez's Days in a Day, a kind of visual
+										adventure in Flash. I realized that I wanted to work in the
+										web.
+									</p>
+
+									<div>
+										<img
+											src="./assets/images/flash.png"
+											class="w-auto h-8 mt-4 rounded"
+											alt="Adobe Flash logo."
+										/>
+									</div>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2006</strong>
+									<p>
+										I started copying (badly) what others were doing on the web.
+									</p>
+
+									<div class="flex gap-4 mt-4">
+										<img
+											src="./assets/images/dw.svg"
+											class="w-auto h-8"
+											alt="Adobe (ex. Macromedia) Dreamweaver."
+										/>
+									</div>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2010</strong>
+
+									<p>
+										I came across the work of people who have inspired me a lot
+										to form ideas about design and the web: Jeffrey Zeldman,
+										Jason Santa Maria, Shaun Inmann, Jeremy Keith, Ethan
+										Marcotte. And then Paul Jarvis, Valerio Proietti, Lea Verou,
+										Chris Coyier, Tim Van Damme, Sara Soueidan and many others.
+									</p>
+
+									<div class="flex gap-2 mt-4">
+										<img
+											src="./assets/images/jz.jpg"
+											class="w-8 rounded-full h8"
+											alt="Jeffrey Zeldman avatar."
+										/>
+										<img
+											src="./assets/images/jsm.jpg"
+											class="w-8 rounded-full h8"
+											alt="Jason Santa Maria avatar."
+										/>
+										<img
+											src="./assets/images/si.jpg"
+											class="w-8 rounded-full h8"
+											alt="Shaun Inmann avatar."
+										/>
+										<img
+											src="./assets/images/jk.jpg"
+											class="w-8 rounded-full h8"
+											alt="Jeremy Keith avatar."
+										/>
+										<img
+											src="./assets/images/em.jpg"
+											class="w-8 rounded-full h8"
+											alt="Ethan Marcotte avatar."
+										/>
+									</div>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2012</strong>
+									<p>
+										I first heard about Ruby on Rails, and after a few years
+										about Laravel.
+									</p>
+
+									<div class="flex gap-4 mt-4">
+										<img
+											src="./assets/images/ror.svg"
+											class="w-auto h-6"
+											alt="Ruby on Rails logo."
+										/>
+									</div>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2014</strong>
+									<p>
+										I co-founded Iperstudio, a tiny collective of developers and
+										designers. Iperstudio still exists after 10 years (and a
+										hundred projects).
+									</p>
+
+									<a
+										href="https://iperstudio.net"
+										target="_blank"
+										class="inline-flex items-center gap-1 px-2 py-1 mt-4 text-white bg-blue-700 rounded"
+									>
+										<span>Iperstudio</span></a
+									>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2015</strong>
+									<p>
+										Flex is an established reality, and the first grid drafts
+										are making their way in. I get hooked on CSS.
+									</p>
+
+									<pre
+										class="flex items-start justify-start mt-4 font-mono text-[0.675rem] leading-snug text-slate-300"
+									>
+										<code class='text-blue-400 whitespace-pre-line'><span class='text-slate-500'>// and the meme is over</span>
+											.center-me {
+											&nbsp;&nbsp;display: flex;
+											&nbsp;&nbsp;justify-content: center;
+											&nbsp;&nbsp;align-items: center;
+											}
+										</code>
+									</pre>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2018</strong>
+									<p>I joined Laracasts.</p>
+
+									<div class="flex gap-4 mt-4">
+										<img
+											src="./assets/images/laracasts.svg"
+											class="w-auto h-6"
+											alt="Laracasts logo."
+										/>
+									</div>
+								</div>
+
+								<div
+									class="p-4 pt-3 transition-colors border border-slate-300 hover:border-slate-100 rounded-2xl"
+								>
+									<strong class="font-semibold">2020</strong>
+									<p>
+										I keep testing (for work and for fun) various JS libraries
+										and frameworks: Next.js, Nuxt, Sveltekit, Remix. None of
+										them convinces me 100%.
+									</p>
+
+									<div class="flex gap-4 mt-4">
+										<img
+											src="./assets/images/react.svg"
+											class="w-auto h-8"
+											alt="React logo."
+										/>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+
+			<div class="z-10 flex flex-col items-center w-full bg-gray-800">
+				<section
+					id="outro"
+					class="w-full px-4 py-32 max-w-7xl scroll-mt-48 text-slate-100"
+				>
+					<div class="grid items-start gap-16 md:grid-cols-3">
+						<div
+							class="flex flex-col gap-4 md:tems-center md:flex-row md:col-span-2"
+						>
+							<img
+								src="./assets/images/mm.jpg"
+								class="rounded-full w-14 h-14"
+								alt="Marco Mezzavilla avatar"
+							/>
+							<h2 class="mt-2 font-serif text-4xl leading-tight md:text-5xl">
+								Thanks for your attention!
+							</h2>
+						</div>
+
+						<ul class="md:mt-4">
+							<li>
+								<a
+									href="mailto:hub@marcomezzavilla.com"
+									class="transition-colors text-slate-300 hover:text-slate-50"
+									>Contact</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://github.com/marcomezzavilla"
+									class="transition-colors text-slate-300 hover:text-slate-50"
+									target="_blank"
+									>GitHub</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://twitter.com/marcomezzavilla"
+									class="transition-colors text-slate-300 hover:text-slate-50"
+									target="_blank"
+									>Twitter</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://pinkary.com/@marco"
+									class="transition-colors text-slate-300 hover:text-slate-50"
+									target="_blank"
+									>Pinkary</a
+								>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
 		</main>
 	</body>
 
@@ -937,18 +1347,19 @@
 			(entries, observer) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
+						console.log(entry.target.id)
 						let navLink = document.querySelector(
 							`nav a[href="#${entry.target.id}"]`
 						)
 
-						navLink.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start',
-							inline: 'start',
-						})
-
 						document.querySelectorAll('nav a').forEach((link) => {
 							link.classList.toggle('grow', link === navLink)
+						})
+
+						navLink.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+							inline: 'center',
 						})
 					}
 				})
